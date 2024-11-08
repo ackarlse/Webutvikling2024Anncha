@@ -1,0 +1,222 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    /**/
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+
+    section{
+        padding: 3rem;
+    }
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #efefef;
+    padding: 1rem;
+
+    #logo{
+        font-size: 25px;
+        margin-bottom: 1rem;
+        font-weight: 900;
+        letter-spacing: -5px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+
+        li{
+            a{
+                padding: 0.5rem 1rem;
+                display: inline-block;
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+  }
+
+  main{
+    display: flex;
+    flex-wrap: wrap;
+
+    section:nth-child(odd){
+        background-color: #1e4772;
+        color: #fff;
+    }
+
+    section{
+        display: flex;
+        flex-wrap: wrap;
+
+        figure{
+            flex-basis: 50%;
+            margin: 0;
+            flex-grow: 1;
+            min-width: 340px;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        section{
+            padding: 0rem 3rem;
+            flex-basis: 50%;
+            flex-grow: 1;
+            align-content: center;
+        }
+
+    }
+  }
+
+  .btn{
+    display: inline-block;
+    padding: 1rem;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    margin: 1rem 0;
+}
+
+  #tjenester{
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    article {
+        background-color: #efefef;
+        padding: 2rem;
+        flex-basis: 250px;
+        flex-grow: 1;
+      }
+
+      #booking{
+        background-color: #1e4772;
+        color: #fff;
+      }
+  }
+
+  #change-order{
+    flex-direction: row;
+
+    figure{
+        order: 1;
+    }
+
+    section{
+        order: 2;
+    }
+
+  }
+
+
+  footer{
+    background-color: #383735;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem;
+
+    section{
+        flex-basis: 50%;
+        flex-grow: 1;
+        min-width: 300px;
+    }
+
+    #footer-logo{
+        width: 100%;
+        font-size: 25px;
+        margin-bottom: 1rem;
+        font-weight: 900;
+        letter-spacing: -5px;
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    a{
+        color: #fff;
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li{
+            padding: 1rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+    }
+  }
+
+  h2{
+    width: 100%;
+  }
+
+  #some{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+
+    i{
+        font-size: 40px;
+    }
+  }
+
+  @media only screen and (min-width: 680px) {
+    header {
+        padding: 3rem;
+        background-color: #efefef;
+            nav{
+                flex-direction: row;
+                align-items: baseline;
+                justify-content: space-between;
+                    padding: 0;
+                ul{
+                    flex-direction: row;
+                }
+            }
+            section{
+                padding: 0;
+            }
+        }
+
+        #change-order{
+            flex-direction: row;
+        
+            figure{
+                order: 2;
+            }
+        
+            section{
+                order: 1;
+            }
+        
+          }
+    
+  }
+
+
+

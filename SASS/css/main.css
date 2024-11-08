@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://picsum.photos/1400/1400");
+  background-size: cover;
+  background-color: #1d3b6c;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body form {
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  width: 100%;
+  color: #000;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+body form a {
+  color: #000;
+}
+body form section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+body form h3 {
+  width: 50%;
+}
+body form label {
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 30px;
+  gap: 1rem;
+}
+body form label span {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body form label input {
+  width: 70%;
+  border: none;
+  background-color: transparent;
+}
+body form button {
+  max-width: 200px;
+  width: 100%;
+}
+
+.btn {
+  max-width: 200px;
+  background-color: transparent;
+  border: 1px solid #2c2c2c;
+  border-radius: 30px;
+  padding: 0.5rem;
+  text-transform: lowercase;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.btn:hover {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+/*
+{
+    "liveSassCompile.settings.formats": [
+
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "~/../css",
+            "savePathReplacementPairs": null
+        }
+    ]
+}*//*# sourceMappingURL=main.css.map */

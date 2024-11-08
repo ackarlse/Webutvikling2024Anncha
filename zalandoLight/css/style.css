@@ -1,3 +1,169 @@
-img{
-    width: 100%;
+html {
+    font-size: calc(1em + 1vw); /* Setter grunnstørrelsen på teksten til 18px for hele dokumentet for å gi en standard baseline */
+}
+
+* {
+    box-sizing: border-box; /* Sikrer at padding og border blir inkludert i elementets totale bredde og høyde. Dette forenkler kontrollen over layouten */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Setter standard fontfamilie til Arial, med fallback til Helvetica og sans-serif for kompatibilitet på tvers av enheter */
+}
+
+#grid-container {
+    display: grid; /* Bruker CSS Grid for å sette opp en layout med rader og kolonner */
+    grid-template-columns: 1fr 3fr 1fr; /* Definerer en grid med 3 kolonner: 1 del til sidemenyer og 3 deler til hovedinnholdet */
+    grid-template-rows: repeat(3, auto); /* Definerer 3 rader som tilpasser seg automatisk etter innhold */
+    row-gap: 2rem; /* Legger til et mellomrom på 2rem mellom radene */
+}
+
+#global-header {
+    grid-column-start: 1;
+    grid-column-end: 4; /* Headeren strekker seg over alle tre kolonnene */
+    grid-row: 1 / 2; /* Plasserer headeren i første rad */
+}
+
+#banner {
+    display: flex; /* Bruker flexbox for å arrangere innholdet i banneret */
+    flex-wrap: wrap; /* Tillater at elementer brytes til neste rad hvis det ikke er plass */
+    
+    img {
+        max-width: 70%; /* Bildet i banneret vil ikke overstige 70% av containerens bredde */
+    }
+}
+
+main {
+    grid-column-start: 2;
+    grid-column-end: 3; /* Hovedinnholdet er plassert i den midterste kolonnen */
+    grid-row-start: 2;
+    grid-row-end: 3; /* Plasserer hovedinnholdet i den andre raden */
+}
+
+main nav ul {
+    display: flex; /* Bruker flexbox for å arrangere navigasjonselementene horisontalt */
+    list-style: none; /* Fjerner standard punktmerking fra listen */
+    padding: 0;
+    margin: 0;
+    gap: 1rem; /* Legger til et mellomrom på 1rem mellom navigasjonselementene */
+
+    a {
+        color: #474747; /* Setter fargen på lenkene til en gråfarge */
+    }
+}
+
+#category-menu {
+    grid-column: 1/2; /* Plasserer kategorimenyen i den første kolonnen */
+    grid-row: 2/3; /* Plasserer den i den andre raden */
+}
+
+#category-menu nav ul {
+    list-style: none; /* Fjerner punktmerking fra kategorimeny-listen */
+}
+
+footer {
+    grid-column-start: 1;
+    grid-column-end: 4; /* Fotnoten strekker seg over alle tre kolonnene */
+    grid-row-start: 3;
+    grid-row-end: 4; /* Plasserer fotnoten i den tredje raden */
+}
+
+img {
+    width: 100%; /* Bildet tar opp 100% av containerens bredde */
+}
+
+#main-logo {
+    width: 100%; /* Logoen tar opp 100% av containerens bredde */
+    max-width: 250px; /* Maksimal bredde for logoen er satt til 250px */
+    display: block; /* Gjør logoen til et blokk-element */
+    margin: 0px auto; /* Sentrerer logoen horisontalt */
+}
+
+.flex-menu {
+    display: flex; /* Bruker flexbox for å arrangere menyen */
+    list-style: none; /* Fjerner punktmerking fra meny-elementene */
+    gap: 1rem; /* Legger til et mellomrom på 1rem mellom meny-elementene */
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Tillater at elementene brytes til neste rad ved behov */
+}
+
+.flex-menu a {
+    text-decoration: none; /* Fjerner understrekningen på lenkene */
+    color: #000; /* Setter fargen på lenkene til svart */
+}
+
+.flex-space-b {
+    display: flex; /* Bruker flexbox for å arrangere elementene */
+    justify-content: space-between; /* Plasserer elementene med plass mellom seg */
+    flex-wrap: wrap; /* Tillater bryting til neste rad hvis nødvendig */
+    gap: 1rem; /* Legger til et mellomrom på 1rem mellom elementene */
+}
+
+.flex-space-b h2 {
+    width: 100%; /* H2 tar opp hele bredden av sin container */
+}
+
+.flex-space-b form {
+    position: relative; /* Posisjonerer skjemaet relativt, slik at det kan inneholde absolutt posisjonerte elementer */
+}
+
+.flex-space-b form label {
+    visibility: hidden; /* Skjuler etiketten fra visning, men beholder den for tilgjengelighet */
+    position: absolute; /* Plasserer etiketten absolutt for mer fleksibel layout */
+}
+
+#outlet {
+    color: #ff0000; /* Setter tekstfargen til elementet med ID 'outlet' til rød */
+}
+
+.product-card {
+    width: 33%; /* Produktkortet tar opp 100% av sin container */
+    box-shadow: 13px 9px 20px 0px #efefef; /* Legger til en subtil skygge for en 3D-effekt */
+    border-radius: 4px; /* Avrunder hjørnene med en radius på 4px */
+    padding: 1rem; /* Legger til 1rem padding på innsiden av produktkortet */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/*DESKTOP*/
+@media only screen and (min-width: 800px) {
+    .fa-burger {
+        display: none; /* Skjuler hamburger-menyikonet på større skjermer */
+    }
+    #menu {
+        display: flex !important; /* Viser hovedmenyen som en flexbox på større skjermer */
+    }
+}
+
+/*MOBIL*/
+@media only screen and (max-width: 800px) {
+    #menu {
+        display: none; /* Skjuler hovedmenyen på mindre skjermer */
+    }
+
+    #grid-container {
+        grid-template-columns: 1fr; /* Endrer layout til én kolonne på mobil */
+        grid-template-rows: auto auto auto auto; /* Setter fire rader for responsiv oppsett */
+    }
+
+    header, main, aside, footer {
+        grid-column: 1/2; /* Sørger for at alle elementer strekker seg over hele bredden på mindre skjermer */
+    }
+
+    header {
+        grid-row: 1/2; /* Plasserer headeren øverst på siden */
+    }
+    
+    main {
+        grid-row: 2/3; /* Plasserer hovedinnholdet i andre rad */
+    }
+    
+    aside {
+        display: none; /* Skjuler sideinnholdet (aside) på mindre skjermer */
+    }
+    
+    footer {
+        grid-row: 3/4; /* Plasserer fotnoten nederst på siden */
+    }
 }

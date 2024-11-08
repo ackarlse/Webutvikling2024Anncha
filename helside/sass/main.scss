@@ -1,0 +1,12 @@
+@use 'design' as *;
+@use 'layout' as *;
+@use 'fonts' as *;
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: $mainFont;
+}

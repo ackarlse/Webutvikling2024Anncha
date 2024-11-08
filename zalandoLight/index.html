@@ -1,90 +1,134 @@
 <!DOCTYPE html>
+<!-- Definerer dokumenttypen som HTML5 -->
 <html lang="nb">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css"> 
-        <title>Zalando Light | Forside</title>
-    </head>
-    <body>
-        <header>
-            <img src="img/Zalando-Logo.png" alt="Nettsted logo">
-            <nav>
-                <ul>
+    <!-- Angir språket som norsk (bokmål) for hele dokumentet -->
+<head>
+    <meta charset="UTF-8">
+    <!-- Angir tegnsettet som UTF-8 for å støtte de fleste språk og spesialtegn -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Gjør nettstedet responsivt, slik at det tilpasser seg ulike skjermstørrelser, som mobil og nettbrett -->  
+    <link href="ikoner/css/fontawesome.css" rel="stylesheet" />
+    <link href="ikoner/css/brands.css" rel="stylesheet" />
+    <link href="ikoner/css/solid.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css"> 
+    <!-- Kobler til en ekstern CSS-fil for styling av nettstedet -->
+    <title>Zalando Light | Forside</title>
+    <!-- Tittelen på nettsiden, vises i nettleserfanen -->
+</head>
+<body>
+    <div id="grid-container">
+        <!-- Starter hovedinnholdet på siden -->
+        <header id="global-header">
+            <!-- Definerer toppinnholdet på siden, typisk for logo og navigasjon -->
+            <img id="main-logo" src="img/Zalando-Logo.png" alt="Nettsted logo">
+            <!-- Viser nettstedets logo. "alt" brukes som alternativ tekst hvis bildet ikke lastes inn, eller for skjermlesere -->
+            <nav class="flex-space-b">
+                <!-- Definerer navigasjonsmenyen på nettsiden -->
+                <i class="fa-solid fa-burger" onclick="toggleMenu()"></i>
+                <ul class="flex-menu" id="menu">
+                    <!-- Lager en liste over menylenker -->
                     <li><a href="#">Nyheter</a></li>
+                    <!-- En lenke til nyheter, med en placeholder "#" for URL -->
                     <li><a href="#">Nordisk stil</a></li>
+                    <!-- En lenke til Nordisk stil -->
                     <li><a href="#">Klær</a></li>
                     <li><a href="#">Sko</a></li>
                     <li><a href="#">Accessories</a></li>
                     <li><a href="#">Streetwear</a></li>
                     <li><a href="#">Sport</a></li>
                     <li><a href="#">Designer</a></li>
-                    <li><a href="#">Outlet</a></li>
+                    <li><a href="#" id="outlet">Outlet</a></li>
+                    <!-- Flere lenker til ulike kategorier -->
                 </ul>
                 <form>
+                    <!-- Starter et søkeskjema som lar brukere søke på nettstedet -->
                     <label for="search">Søk</label>
+                    <!-- Gir et tekstfelt for søk, med en tilknyttet label for tilgjengelighet -->
                     <input type="search" placeholder="Her kan du søke etter produkter..." id="search">
+                    <!-- Definerer søkefeltet, med et placeholder som viser eksempeltekst i feltet -->
                     <input type="submit" value="søk">
+                    <!-- Legger til en knapp for å sende inn søket -->
                 </form>
             </nav>
         </header>
         <main>
-            <section>
-                <h2>Våre beste deals</h2>
-                <a href="#">Shop nå -></a>
+            <!-- Definerer hovedinnholdet på siden -->
+            <section id="banner">
+                <!-- Definerer en seksjon for spesifikke innholdstyper, her brukt for de beste tilbudene -->
+                <div>
+                    <h2>Våre beste deals</h2>
+                    <!-- Overskrift for seksjonen -->
+                    <a href="#">Shop nå -></a>
+                </div>
+                <!-- En lenke som oppfordrer brukeren til å handle nå -->
                 <img src="img/powerup.webp" alt="Våre beste deals">
+                <!-- Et bilde som illustrerer de beste tilbudene -->
             </section>
-            <section>
+            <section class="flex-space-b">
+                <!-- En ny seksjon for produktvisning -->
                 <h2>Produkter</h2>
-                <article>
+                <!-- Overskrift for produktseksjonen -->
+                
+                <!-- Definerer hvert produkt som en artikkel -->
+                <article class="product-card">
+                    <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
+                    <!-- Produktbilde med alternativ tekst -->
+                    <a href="#">adidas Originals</a>
+                    <!-- Lenke til produktmerket -->
+                    <a href="#"><h3>Handbal Spezial</h3></a>
+                    <!-- Produktnavn som lenke -->
+                    <p>1299 kr</p>
+                    <!-- Pris på produktet -->
+                </article>
+
+                <!-- Gjentar artikkelen for hvert produkt som vises -->
+                <article class="product-card">
                     <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
                     <a href="#">adidas Originals</a>
                     <a href="#"><h3>Handbal Spezial</h3></a>
                     <p>1299 kr</p>
                 </article>
-                <article>
+                <!-- Flere produktartikler følger, med samme struktur, men med unike lenker og bilder for hvert produkt -->
+
+                <!-- Eksempel på gjentakelse for flere produkter -->
+                <article class="product-card">
                     <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
                     <a href="#">adidas Originals</a>
                     <a href="#"><h3>Handbal Spezial</h3></a>
                     <p>1299 kr</p>
                 </article>
-                <article>
+                <!-- Artikkelen gjentas for flere produkter, til sammen 9 produkter -->
+                <article class="product-card">
                     <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
                     <a href="#">adidas Originals</a>
                     <a href="#"><h3>Handbal Spezial</h3></a>
                     <p>1299 kr</p>
                 </article>
-                <article>
+                <article class="product-card">
                     <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
                     <a href="#">adidas Originals</a>
                     <a href="#"><h3>Handbal Spezial</h3></a>
                     <p>1299 kr</p>
                 </article>
-                <article>
+                <article class="product-card">
                     <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
                     <a href="#">adidas Originals</a>
                     <a href="#"><h3>Handbal Spezial</h3></a>
                     <p>1299 kr</p>
                 </article>
-                <article>
+                <article class="product-card">
                     <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
                     <a href="#">adidas Originals</a>
                     <a href="#"><h3>Handbal Spezial</h3></a>
                     <p>1299 kr</p>
                 </article>
-                <article>
+                <article class="product-card">
                     <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
                     <a href="#">adidas Originals</a>
                     <a href="#"><h3>Handbal Spezial</h3></a>
                     <p>1299 kr</p>
                 </article>
-                <article>
-                    <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
-                    <a href="#">adidas Originals</a>
-                    <a href="#"><h3>Handbal Spezial</h3></a>
-                    <p>1299 kr</p>
-                </article>
-                <article>
+                <article class="product-card">
                     <img src="img/produktbilde.webp" alt="adidas Orginals handbal spezial">
                     <a href="#">adidas Originals</a>
                     <a href="#"><h3>Handbal Spezial</h3></a>
@@ -92,6 +136,28 @@
                 </article>
             </section>
         </main>
-        <footer>Zalando Light 2024</footer>
-    </body>
+        <footer>
+            <!-- Definerer bunnteksten på siden -->
+            Zalando Light 2024
+            <!-- Enkel tekst som viser nettstedets merkevare og årstall -->
+        </footer>
+    </div>
+    <script>
+        // Definerer en funksjon kalt toggleMenu, som brukes til å vise eller skjule menyen
+        let toggleMenu = () => {
+            // Henter elementet med id 'menu' og lagrer det i variabelen x
+            let x = document.getElementById("menu");
+    
+            // Sjekker om elementets display-stil er satt til 'flex'
+            if (x.style.display === "flex") {
+                // Hvis display er 'flex', setter vi det til 'none' for å skjule menyen
+                x.style.display = "none";
+            } else {
+                // Hvis display ikke er 'flex', setter vi det til 'flex' for å vise menyen
+                x.style.display = "flex";
+            }
+        }
+    </script>
+    
+</body>
 </html>

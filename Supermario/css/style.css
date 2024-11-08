@@ -1,0 +1,126 @@
+main{
+    background-image: url('../sprites/bakgrunn.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 1200px;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+@keyframes runningsopp{
+    from {background-image: url('../sprites/sopp.png');}
+    to {background-image: url('../sprites/sopp-kopi.png');}
+}
+
+@keyframes soppbackandforth{
+    from {right:53px;}
+    to {right: 397px;}
+}
+
+@keyframes running {
+    from {background-image: url('../sprites/staa.png');}
+    to {background-image: url('../sprites/lopende.png');}
+  }
+
+@keyframes forward {
+    from {left: 0;}
+    to {left: 425px;}
+  }
+
+@keyframes runJump{
+    0% {
+        left: 425px;
+        bottom: 53px;
+    }
+
+    25%{
+        left: 600px;
+        bottom: 53px;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    100%{
+        bottom: 53px;
+        left:760px;
+    }
+}
+
+  @keyframes jump {
+    0% {bottom: 53px;}
+    50% {bottom: 125px;}
+    100%{bottom: 53px;}
+  }
+
+  @keyframes dies {
+
+    0%{
+        bottom: 53px;
+        transform: rotate(0deg) scale(1);
+        left:760px;
+        background-image: url('../sprites/dead.png');
+    }
+
+    25%{
+        bottom: 53px;
+        transform: rotate(-0deg) scale(1);
+        left:760px;
+        background-image: url('../sprites/dead.png');
+    }
+    50%{
+        bottom: 53px;
+        transform: rotate(-0deg) scale(1);
+        left:760px;
+        background-image: url('../sprites/dead.png');
+    }
+    
+    100%{
+        transform: rotate(-40deg) scale(1.5);
+        left:760px;
+        bottom: 159px;
+        background-image: url('../sprites/dead.png');
+    }
+
+
+  }
+
+
+
+#supermario{
+    background-size: contain;
+    z-index: 999;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 53px;
+    animation-name: running, forward, jump, runJump, dies;
+    animation-duration: 0.3s, 5s, 2s, 2.5s, 0.5s;
+    animation-delay: 0s, 0s, 5s, 7s, 9.3s;
+    animation-fill-mode: forwards, forwards, none, forwards, forwards;
+    animation-iteration-count: infinite, 1, 1, 1, 1;
+    animation-timing-function: ease-in, ease-in-out, ease-in-out,ease-in-out, ease-in;
+   
+}
+
+#sopp{
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    bottom: 53px;
+    right: 53px;
+    animation-name: runningsopp, soppbackandforth;
+    animation-iteration-count: infinite, infinite;
+    animation-duration: 0.5s, 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+
+}
+
+
